@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public Scene nextLevel;
+    public string nextLevel;
     public PlayerController player;
     public Goal goal;
 
@@ -20,7 +20,10 @@ public class LevelManager : MonoBehaviour
 
     public void GoToNextLevel()
     {
-        SceneManager.LoadScene(nextLevel.buildIndex);
+        if(!string.IsNullOrEmpty(nextLevel))
+            SceneManager.LoadScene(nextLevel);
+        else
+            Debug.Log("End of game!");
     }
 
     public void ReloadLevel()
