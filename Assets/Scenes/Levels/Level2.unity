@@ -6188,7 +6188,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6207,12 +6207,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: a49b4227ae43d4c2d895706d677d948a, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
@@ -6401,7 +6401,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4060631374465864936, guid: 386af45775f34f94ea083fad2d0054a6, type: 3}
       propertyPath: currentValue
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4253297328530706512, guid: 386af45775f34f94ea083fad2d0054a6, type: 3}
       propertyPath: m_NotificationBehavior

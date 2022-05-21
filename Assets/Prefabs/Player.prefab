@@ -303,6 +303,8 @@ MonoBehaviour:
   isActive: 1
   fallMultiplier: 3
   lowJumpMultiplier: 2
+  rb: {fileID: 0}
+  collision: {fileID: 0}
 --- !u!114 &4060631374465864936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,7 +446,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cb823fd6b570e0542badff7159f19878, type: 3}
   m_Color: {r: 0.5333145, g: 0.514151, b: 1, a: 1}
   m_FlipX: 0

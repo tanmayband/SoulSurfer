@@ -6281,6 +6281,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4060631374465864936, guid: 386af45775f34f94ea083fad2d0054a6, type: 3}
+      propertyPath: currentValue
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 4253297328530706512, guid: 386af45775f34f94ea083fad2d0054a6, type: 3}
       propertyPath: m_NotificationBehavior
       value: 0
@@ -6464,7 +6468,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4968493359507808974, guid: dbda7366cb26782499a6b5f237b36477, type: 3}
       propertyPath: target
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4968493359507808974, guid: dbda7366cb26782499a6b5f237b36477, type: 3}
       propertyPath: playerManager

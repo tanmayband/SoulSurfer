@@ -37,24 +37,21 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //Move the player
-        rb.velocity = new Vector2(rawInput.x * moveSpeed, rb.velocity.y);
-
-        //Make the player jump
-        if (isJumping)
+        if(isGhost)
         {
-            if(isGhost)
-            {
-                rb.velocity += Vector2.up * moveSpeed;
-            }
-            else
+            rb.velocity = new Vector2(rawInput.x * moveSpeed, rawInput.y * moveSpeed);
+        }
+        else
+        {
+            rb.velocity = new Vector2(rawInput.x * moveSpeed, rb.velocity.y);
+
+            //Make the player jump
+            if (isJumping)
             {
                 rb.velocity += Vector2.up * jumpForce;
+                isJumping = false;
             }
-            isJumping = false;
-        }
 
-        if(!isGhost)
-        {
             // make the jump better
             if(rb.velocity.y < 0)
             {
@@ -65,6 +62,8 @@ public class PlayerController : MonoBehaviour
                 rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
         }
+
+        
     }
 
     //Used by the input system 
@@ -72,16 +71,22 @@ public class PlayerController : MonoBehaviour
     {
         if (!isActive) { return; }
         rawInput = value.Get<Vector2>();
+        
+        jumpPressed = rawInput.y > 0;
+        isJumping = (
+            jumpPressed
+            && feet.IsTouchingLayers(LayerMask.GetMask(platformLayer))
+        );
     }
 
     //Used by the input system
     void OnJump(InputValue value)
     {
-        if (!isActive) { return; }
-        jumpPressed = value.isPressed;
-        if (!feet.IsTouchingLayers(LayerMask.GetMask(platformLayer))) { return; }
+        // if (!isActive) { return; }
+        // jumpPressed = value.isPressed;
+        // if (!feet.IsTouchingLayers(LayerMask.GetMask(platformLayer))) { return; }
         
-        isJumping = true;
+        // isJumping = true;
     }
 
     void OnRestart()
