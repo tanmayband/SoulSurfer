@@ -19,16 +19,19 @@ public class PlayerController : MonoBehaviour
     Vector2 rawInput;
     bool isJumping;
     bool jumpPressed;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
+    public BoxCollider2D collision;
 
 
     const string platformLayer = "Platform";
 
+    private bool isGhost;
     public event Action restartLevelEvent;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        collision = GetComponent<BoxCollider2D>();
     }
 
     void FixedUpdate()
@@ -39,18 +42,28 @@ public class PlayerController : MonoBehaviour
         //Make the player jump
         if (isJumping)
         {
-            rb.velocity += Vector2.up * jumpForce;
+            if(isGhost)
+            {
+                rb.velocity += Vector2.up * moveSpeed;
+            }
+            else
+            {
+                rb.velocity += Vector2.up * jumpForce;
+            }
             isJumping = false;
         }
 
-        // make the jump better
-        if(rb.velocity.y < 0)
+        if(!isGhost)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        }
-        else if(rb.velocity.y > 0 && !jumpPressed)
-        {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            // make the jump better
+            if(rb.velocity.y < 0)
+            {
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            }
+            else if(rb.velocity.y > 0 && !jumpPressed)
+            {
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            }
         }
     }
 
@@ -79,5 +92,12 @@ public class PlayerController : MonoBehaviour
     public void ClearEventHandlers()
     {
         restartLevelEvent = null;
+    }
+    
+    public void ToggleGhostMode(bool enabled)
+    {
+        isGhost = enabled;
+        collision.enabled = !enabled;
+        rb.gravityScale = enabled ? 0 : 1;
     }
 }

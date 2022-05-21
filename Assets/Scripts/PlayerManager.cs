@@ -7,6 +7,13 @@ public class PlayerManager : MonoBehaviour
 {
     public TextMeshPro valueText;
     public int currentValue;
+    
+    private PlayerController playerController;
+
+    void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
 
     void Start()
     {
@@ -17,6 +24,8 @@ public class PlayerManager : MonoBehaviour
     {
         currentValue = newValue;
         valueText.text = currentValue.ToString();
+
+        playerController.ToggleGhostMode(newValue == 0);
     }
 
     public void IncrementValue(int incrementBy)
@@ -33,4 +42,5 @@ public class PlayerManager : MonoBehaviour
     {
         IncrementValue(-5);
     }
+
 }
