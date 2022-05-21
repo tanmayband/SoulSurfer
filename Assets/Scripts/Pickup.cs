@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    void Awake()
+    {
+        gameObject.layer = 8;
+    }
+    
     void OnTriggerEnter2D(Collider2D other) 
     {
         //Add the coin to the player wallet when collectd

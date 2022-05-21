@@ -102,7 +102,8 @@ public class PlayerController : MonoBehaviour
     public void ToggleGhostMode(bool enabled)
     {
         isGhost = enabled;
-        collision.enabled = !enabled;
+        // collision.enabled = !enabled;
+        gameObject.layer = enabled ? 7 : 0;
         rb.gravityScale = enabled ? 0 : 1;
     }
 }

@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 4968493359507808976}
   - component: {fileID: 4968493359507808975}
   - component: {fileID: 4968493359507808974}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GoalFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}

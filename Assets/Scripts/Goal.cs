@@ -26,6 +26,8 @@ public class Goal : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = defaultColor;
         playerWallet = FindObjectOfType<Wallet>();
+        
+        gameObject.layer = 8;
     }
 
     void Start()
