@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class Goal : MonoBehaviour
     PlayerManager playerManager;
 
     bool isUnlocked;
+
+    public event Action goalCompleteEvent;
 
     void Awake() 
     {
@@ -48,8 +51,13 @@ public class Goal : MonoBehaviour
         if (other.GetComponent<Wallet>() == playerWallet)
         {
             if(isUnlocked) {
-                LevelManager.Instance.ReloadLevel();
+                goalCompleteEvent?.Invoke();
             }
         }
+    }
+
+    public void ClearEventHandlers()
+    {
+        goalCompleteEvent = null;
     }
 }

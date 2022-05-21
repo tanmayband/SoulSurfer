@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
 
 
     const string platformLayer = "Platform";
+
+    public event Action restartLevelEvent;
 
     void Awake()
     {
@@ -70,6 +73,11 @@ public class PlayerController : MonoBehaviour
 
     void OnRestart()
     {
-        LevelManager.Instance.ReloadLevel();
+        restartLevelEvent?.Invoke();
+    }
+
+    public void ClearEventHandlers()
+    {
+        restartLevelEvent = null;
     }
 }
