@@ -6445,6 +6445,14 @@ PrefabInstance:
       propertyPath: nextLevel
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 4930295507155751662, guid: a9189751bb5263c4ea9cb00fcb0af362, type: 3}
+      propertyPath: nextLevel.scenePath
+      value: Assets/Scenes/Levels/Level1.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930295507155751662, guid: a9189751bb5263c4ea9cb00fcb0af362, type: 3}
+      propertyPath: nextLevel.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: bdb5409b93dbb492580c566995a89653, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9189751bb5263c4ea9cb00fcb0af362, type: 3}
 --- !u!1001 &4968493359446231070
