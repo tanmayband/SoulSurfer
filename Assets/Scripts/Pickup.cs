@@ -8,7 +8,7 @@ public class Pickup : MonoBehaviour
     {
         gameObject.layer = 8;
     }
-    
+
     void OnTriggerEnter2D(Collider2D other) 
     {
         //Add the coin to the player wallet when collectd
@@ -18,10 +18,10 @@ public class Pickup : MonoBehaviour
         //     wallet.IncrementCoins();
         //     Destroy(gameObject);
         // }
-        PlayerManager playerManager = other.GetComponent<PlayerManager>();
-        if(playerManager != null)
+        AliveManager aliveManager = other.GetComponent<AliveManager>();
+        if(aliveManager != null)
         {
-            playerManager.IncrementValue(10);
+            aliveManager.IncrementHealth(10);
             Destroy(gameObject);
         }
     }

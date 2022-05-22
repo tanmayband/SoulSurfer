@@ -8,12 +8,12 @@ public class Spike : MonoBehaviour
     {
         gameObject.layer = 8;
     }
-    
+
     void OnTriggerEnter2D(Collider2D other) {
-        PlayerManager playerManager = other.GetComponent<PlayerManager>();
-        if(playerManager != null)
+        AliveManager aliveManager = other.GetComponent<AliveManager>();
+        if(aliveManager != null)
         {
-            playerManager.IncrementValue(-2);
+            aliveManager.IncrementHealth(-2);
         }    
     }
 }

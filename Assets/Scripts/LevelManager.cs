@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     // public string nextLevel;
     public SceneReference nextLevel;
-    public PlayerController player;
+    public AliveController alivePlayer;
     public Goal goal;
 
     void Start()
@@ -15,8 +15,8 @@ public class LevelManager : MonoBehaviour
         goal.ClearEventHandlers();
         goal.goalCompleteEvent += GoToNextLevel;
 
-        player.ClearEventHandlers();
-        player.restartLevelEvent += ReloadLevel;
+        alivePlayer.ClearEventHandlers();
+        alivePlayer.restartLevelEvent += ReloadLevel;
     }
 
     public void GoToNextLevel()
@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
 
     public void ReloadLevel()
     {
-        player.isActive = false;
+        alivePlayer.isActive = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

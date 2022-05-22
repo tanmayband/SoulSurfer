@@ -182,10 +182,10 @@ GameObject:
   - component: {fileID: 4253297328530706515}
   - component: {fileID: 225087844649615580}
   - component: {fileID: 4253297328530706512}
-  - component: {fileID: 4253297328530706517}
-  - component: {fileID: 4060631374465864936}
+  - component: {fileID: 7657898347106183480}
+  - component: {fileID: 6605656595928605164}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Alive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &4253297328530706517
+--- !u!114 &7657898347106183480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,7 +294,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4253297328530706518}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eede5b216731605458dc2bd78f1b2157, type: 3}
+  m_Script: {fileID: 11500000, guid: 3458da0d7f0e5407d9f4a00351b6dbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthValueText: {fileID: 5487443412770533381}
+  health:
+    min: 0
+    max: 10
+    _current: 10
+  aliveController: {fileID: 0}
+--- !u!114 &6605656595928605164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4253297328530706518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b638a67eafc447a968078a78021284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
@@ -305,20 +323,6 @@ MonoBehaviour:
   lowJumpMultiplier: 2
   rb: {fileID: 0}
   collision: {fileID: 0}
---- !u!114 &4060631374465864936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4253297328530706518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074815c65ff024864b7bb9d0a18de9d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  valueText: {fileID: 5487443412770533381}
-  currentValue: 0
 --- !u!1 &4253297329264242479
 GameObject:
   m_ObjectHideFlags: 0

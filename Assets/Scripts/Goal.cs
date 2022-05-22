@@ -15,7 +15,7 @@ public class Goal : MonoBehaviour
     Wallet playerWallet;
     
     [SerializeField]
-    PlayerManager playerManager;
+    AliveManager aliveManager;
 
     bool isUnlocked;
 
@@ -43,7 +43,7 @@ public class Goal : MonoBehaviour
         //     isUnlocked = true;
         //     spriteRenderer.color = unlockColor;
         // }
-        isUnlocked = playerManager.currentValue == target;
+        isUnlocked = aliveManager.health.current == target;
         spriteRenderer.color = isUnlocked ? unlockColor : defaultColor;
     }
 
