@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7150886906907204393}
   - component: {fileID: 7150886906907204374}
+  - component: {fileID: 2427670432616511009}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -47,6 +48,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aliveManager: {fileID: 3638314053282585273}
   ghostManager: {fileID: 9093997756400075216}
+--- !u!114 &2427670432616511009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7150886906907204392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5456590092cac38439fafa11fb1cace0, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!114 &7150886907010360287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +262,14 @@ PrefabInstance:
     - target: {fileID: 4253297328530706518, guid: 469fe6b9c6b734a7e9b96bee517375e1, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253297328530706518, guid: 469fe6b9c6b734a7e9b96bee517375e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253297329431871019, guid: 469fe6b9c6b734a7e9b96bee517375e1, type: 3}
+      propertyPath: m_Color.a
+      value: 0.34901962
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 469fe6b9c6b734a7e9b96bee517375e1, type: 3}

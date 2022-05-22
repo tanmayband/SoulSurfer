@@ -5347,6 +5347,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &266174368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7150886906907204374, guid: dbec1af6927ce44618373a729121643e, type: 3}
+  m_PrefabInstance: {fileID: 7150886906802169014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074815c65ff024864b7bb9d0a18de9d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,6 +6226,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1974945639 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 258872381054030445, guid: dbec1af6927ce44618373a729121643e, type: 3}
+  m_PrefabInstance: {fileID: 7150886906802169014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b638a67eafc447a968078a78021284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143211326
 GameObject:
   m_ObjectHideFlags: 0
@@ -6314,6 +6336,10 @@ PrefabInstance:
       value: Level1
       objectReference: {fileID: 0}
     - target: {fileID: 4930295507155751662, guid: a9189751bb5263c4ea9cb00fcb0af362, type: 3}
+      propertyPath: alivePlayer
+      value: 
+      objectReference: {fileID: 1974945639}
+    - target: {fileID: 4930295507155751662, guid: a9189751bb5263c4ea9cb00fcb0af362, type: 3}
       propertyPath: nextLevel.scenePath
       value: Assets/Scenes/Levels/Level1.unity
       objectReference: {fileID: 0}
@@ -6337,7 +6363,7 @@ PrefabInstance:
     - target: {fileID: 4968493359507808974, guid: dbda7366cb26782499a6b5f237b36477, type: 3}
       propertyPath: playerManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 266174368}
     - target: {fileID: 4968493359507808977, guid: dbda7366cb26782499a6b5f237b36477, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6406,6 +6432,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3638314053282585273, guid: dbec1af6927ce44618373a729121643e, type: 3}
+      propertyPath: health._currRRRent
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7150886906907204392, guid: dbec1af6927ce44618373a729121643e, type: 3}
       propertyPath: m_Name
       value: PlayerManager

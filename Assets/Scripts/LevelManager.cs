@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
 
     public void ReloadLevel()
     {
-        alivePlayer.isActive = false;
+        alivePlayer.ToggleActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

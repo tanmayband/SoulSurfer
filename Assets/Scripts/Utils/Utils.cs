@@ -20,7 +20,7 @@ namespace UtilsClasses
         public float current { get { return _current; } private set {} }
         
         [SerializeField]
-        private float _current;
+        private float _current; // so that the current value can be set from inspector, but not from any other script.
 
         public event Action MinReachedEvent;
         public event Action MaxReachedEvent;
@@ -29,7 +29,7 @@ namespace UtilsClasses
         {
             min = minVal;
             max = maxVal;
-            current = currentVal;
+            _current = currentVal;
         }
 
         public void ClearEventHandlers()
@@ -51,8 +51,7 @@ namespace UtilsClasses
                 MaxReachedEvent?.Invoke();
             }
 
-            current = newValue;
-            _current = current;
+            _current = newValue;
         }
 
         public float IncrementValue(float incrementBy)

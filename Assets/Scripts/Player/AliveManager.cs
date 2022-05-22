@@ -12,7 +12,7 @@ public class AliveManager : MonoBehaviour, IClassWithEvents
     
     public RangedValue health;
     
-    public AliveController aliveController;
+    public AliveController aliveController { get; private set; }
 
     public event Action DeathEvent;
 
@@ -32,6 +32,7 @@ public class AliveManager : MonoBehaviour, IClassWithEvents
 
     public void SetHealth(float newHealth)
     {
+        Debug.Log(newHealth);
         health.SetValue(newHealth);
         healthValueText.text = health.current.ToString();
     }
@@ -48,8 +49,7 @@ public class AliveManager : MonoBehaviour, IClassWithEvents
 
     public void ToggleAliveMode(bool enabled)
     {
-        gameObject.SetActive(enabled);
-        aliveController.isActive = enabled;
+        aliveController.ToggleActive(enabled);
     }
 
 }

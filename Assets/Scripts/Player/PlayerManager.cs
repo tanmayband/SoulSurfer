@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
 {    
     public AliveManager aliveManager;
     public GhostManager ghostManager;
+    private bool isGhost;
 
     void Awake()
     {
@@ -20,24 +21,30 @@ public class PlayerManager : MonoBehaviour
     {
         aliveManager.ClearEventHandlers();
         aliveManager.DeathEvent += Death;
+
+        if(aliveManager.health.current > 0) Revive();
+        else Death();
     }
 
     private void Death()
     {
         Debug.Log("Become ghost BOOO");
-        ghostManager.ToggleGhostMode(true);
+        ghostManager.SpawnGhost(aliveManager.transform.position);
         aliveManager.ToggleAliveMode(false);
     }
 
     private void Revive()
     {
         Debug.Log("Become ALIVE");
-        ghostManager.ToggleGhostMode(false);
+        ghostManager.UnspawnGhost();
         aliveManager.ToggleAliveMode(true);
     }
 
-    public void OnToggle(InputValue value)
+    public void OnCHEATToggle(InputValue value)
     {
-        
+        Debug.Log("TOGGLIN' SIT TIGHT");
+        isGhost = !isGhost;
+        if(isGhost) Death();
+        else Revive();
     }
 }

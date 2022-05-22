@@ -11,7 +11,7 @@ public class AliveController : MonoBehaviour
     [SerializeField] float jumpForce = 8f;
     [SerializeField] Collider2D feet;
 
-    public bool isActive = true;
+    public bool isActive {get; private set;}
     public float fallMultiplier = 3f;
     public float lowJumpMultiplier = 2f;
 
@@ -35,38 +35,48 @@ public class AliveController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Move the player
-        rb.velocity = new Vector2(rawInput.x * moveSpeed, rb.velocity.y);
+        if(isActive)
+        {
+            //Move the player
+            rb.velocity = new Vector2(rawInput.x * moveSpeed, rb.velocity.y);
 
-        //Make the player jump
-        if (isJumping)
-        {
-            rb.velocity += Vector2.up * jumpForce;
-            isJumping = false;
-        }
+            //Make the player jump
+            if (isJumping)
+            {
+                rb.velocity += Vector2.up * jumpForce;
+                isJumping = false;
+            }
 
-        // make the jump better
-        if(rb.velocity.y < 0)
-        {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        }
-        else if(rb.velocity.y > 0 && !jumpPressed)
-        {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            // make the jump better
+            if(rb.velocity.y < 0)
+            {
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            }
+            else if(rb.velocity.y > 0 && !jumpPressed)
+            {
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            }
         }
     }
 
     //Used by the input system 
     void OnMove(InputValue value)
     {
-        if (!isActive) { return; }
         rawInput = value.Get<Vector2>();
+
+        if (!isActive) { return; }
         
         jumpPressed = rawInput.y > 0;
         isJumping = (
             jumpPressed
             && feet.IsTouchingLayers(LayerMask.GetMask(platformLayer))
         );
+    }
+
+    public void ToggleActive(bool active)
+    {
+        isActive = active;
+        rb.velocity = isActive ? rb.velocity : Vector2.zero;
     }
 
     void OnRestart()

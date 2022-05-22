@@ -22,25 +22,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Increase",
-                    "type": "Button",
-                    "id": "12889f92-1515-48d0-832c-c998ecf9c107",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Decrease",
-                    "type": "Button",
-                    "id": "02bb5d69-72bb-49e2-9e7f-3da86809e358",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Restart",
                     "type": "Button",
                     "id": "118269af-298a-408f-9c7e-5170f5167e2e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CHEAT Toggle",
+                    "type": "Button",
+                    "id": "b90815f4-c741-45db-b6dc-5b7ffa1a56c9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -203,34 +195,23 @@
                 },
                 {
                     "name": "",
-                    "id": "257a8723-bc3c-457c-9875-aa24cbd0711d",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Increase",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6a63e5f7-70f0-4d6f-b8c3-5236f67e31d4",
-                    "path": "<Keyboard>/0",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Decrease",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "9da581d6-1bb4-4ee5-997d-f75c31f1eb6a",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "238dc03c-f84a-48af-9537-83a08dc8060d",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "CHEAT Toggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
