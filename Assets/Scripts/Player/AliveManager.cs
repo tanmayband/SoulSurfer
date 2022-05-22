@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,15 @@ using TMPro;
 
 using UtilsClasses;
 
-public class AliveManager : MonoBehaviour
+public class AliveManager : MonoBehaviour, IClassWithEvents
 {
     public TextMeshPro healthValueText;
     
     public RangedValue health;
     
     public AliveController aliveController;
+
+    public event Action DeathEvent;
 
     void Awake()
     {
@@ -22,14 +25,9 @@ public class AliveManager : MonoBehaviour
     {
         health = new RangedValue(0, 10, 10);
         health.ClearEventHandlers();
-        health.MinReachedEvent += Death;
+        health.MinReachedEvent += DeathEvent;
 
         SetHealth(health.current);
-    }
-
-    private void Death()
-    {
-        Debug.Log("Make ghost, BOOOO");
     }
 
     public void SetHealth(float newHealth)
@@ -41,6 +39,17 @@ public class AliveManager : MonoBehaviour
     public void IncrementHealth(int incrementBy)
     {
         SetHealth(health.current + incrementBy);
+    }
+
+    public void ClearEventHandlers()
+    {
+        DeathEvent = null;
+    }
+
+    public void ToggleAliveMode(bool enabled)
+    {
+        gameObject.SetActive(enabled);
+        aliveController.isActive = enabled;
     }
 
 }
