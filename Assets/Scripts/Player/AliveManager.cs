@@ -12,7 +12,7 @@ public class AliveManager : MonoBehaviour, IClassWithEvents
     
     public RangedValue health;
     
-    public AliveController aliveController { get; private set; }
+    public AliveController aliveController;
 
     public event Action DeathEvent;
 
@@ -50,6 +50,11 @@ public class AliveManager : MonoBehaviour, IClassWithEvents
     public void ToggleAliveMode(bool enabled)
     {
         aliveController.ToggleActive(enabled);
+    }
+
+    public bool IsAlive()
+    {
+        return health.current > health.min;
     }
 
 }

@@ -14,7 +14,7 @@ namespace UtilsClasses
     public class RangedValue : IClassWithEvents
     {
         [SerializeField]
-        private float min;
+        public float min { get; private set; }
         [SerializeField]
         private float max;
         public float current { get { return _current; } private set {} }

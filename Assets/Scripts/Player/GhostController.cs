@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GhostController : MonoBehaviour
+using UtilsClasses;
+
+public class GhostController : MonoBehaviour, IClassWithEvents
 {
     [SerializeField] float moveSpeed = 6f;
     public bool isActive {get; private set;}
@@ -12,6 +14,9 @@ public class GhostController : MonoBehaviour
     Vector2 rawInput;
     public Rigidbody2D rb;
     public BoxCollider2D collision;
+    public event Action<AliveManager> PossessingEvent;
+
+    private AliveManager overlappingCharacter;
 
     void Awake()
     {
@@ -29,16 +34,40 @@ public class GhostController : MonoBehaviour
         }
     }
 
-    //Used by the input system 
+    public void ToggleActive(bool active)
+    {
+        isActive = active;
+        rb.velocity = isActive ? rb.velocity : Vector2.zero;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        //Complete the level if the player has enough coins
+        if (other.GetComponent<AliveManager>() != null)
+        {
+            overlappingCharacter = other.GetComponent<AliveManager>();
+        }
+    }
+
+    public void ClearEventHandlers()
+    {
+        PossessingEvent = null;
+    }
+
+    #region INPUT
+    //Used by the input system
+
     void OnMove(InputValue value)
     {
         rawInput = value.Get<Vector2>();
         if (!isActive) { return; }
     }
 
-    public void ToggleActive(bool active)
+    void OnPossess(InputValue value)
     {
-        isActive = active;
-        rb.velocity = isActive ? rb.velocity : Vector2.zero;
+        PossessingEvent?.Invoke(overlappingCharacter);
     }
+
+    #endregion
+    
 }

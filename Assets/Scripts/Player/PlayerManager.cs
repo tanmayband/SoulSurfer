@@ -7,7 +7,7 @@ using TMPro;
 using UtilsClasses;
 
 public class PlayerManager : MonoBehaviour
-{    
+{
     public AliveManager aliveManager;
     public GhostManager ghostManager;
     private bool isGhost;
@@ -22,6 +22,9 @@ public class PlayerManager : MonoBehaviour
         aliveManager.ClearEventHandlers();
         aliveManager.DeathEvent += Death;
 
+        ghostManager.ghostController.ClearEventHandlers();
+        ghostManager.ghostController.PossessingEvent += ChangeBody;
+
         if(aliveManager.health.current > 0) Revive();
         else Death();
     }
@@ -31,6 +34,19 @@ public class PlayerManager : MonoBehaviour
         Debug.Log("Become ghost BOOO");
         ghostManager.SpawnGhost(aliveManager.transform.position);
         aliveManager.ToggleAliveMode(false);
+    }
+
+    private void ChangeBody(AliveManager newBodyManager)
+    {
+        if(newBodyManager.IsAlive())
+        {
+            aliveManager = newBodyManager;
+            Revive();
+        }
+        else
+        {
+            Debug.Log("He ded bro");
+        }
     }
 
     private void Revive()
@@ -43,8 +59,10 @@ public class PlayerManager : MonoBehaviour
     public void OnCHEATToggle(InputValue value)
     {
         Debug.Log("TOGGLIN' SIT TIGHT");
-        isGhost = !isGhost;
-        if(isGhost) Death();
-        else Revive();
+        Death();
+        
+        // isGhost = !isGhost;
+        // if(isGhost) Death();
+        // else Revive();
     }
 }
