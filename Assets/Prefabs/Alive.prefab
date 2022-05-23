@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 4253297328530706512}
   - component: {fileID: 7657898347106183480}
   - component: {fileID: 6605656595928605164}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Alive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthValueText: {fileID: 5487443412770533381}
   health:
-    min: 0
     max: 10
     _current: 10
   aliveController: {fileID: 0}
@@ -318,7 +317,6 @@ MonoBehaviour:
   moveSpeed: 6
   jumpForce: 8
   feet: {fileID: 4253297329264242477}
-  isActive: 1
   fallMultiplier: 3
   lowJumpMultiplier: 2
   rb: {fileID: 0}

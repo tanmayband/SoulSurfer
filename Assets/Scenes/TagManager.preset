@@ -58,7 +58,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: layers.Array.data[9]
-    value: 
+    value: Character
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: layers.Array.data[10]
