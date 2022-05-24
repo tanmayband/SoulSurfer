@@ -12,9 +12,8 @@ public class Goal : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //Complete the level if the player has enough coins
-        // if (ConstantsUtils.CheckLayer(other.gameObject.layer, LAYER.Character))
-        if(other.name == "AliveMC")
+        if (ConstantsUtils.CheckLayer(other.gameObject.layer, LAYER.Character))
+        // if(other.name == "AliveMC")
         {
             goalCompleteEvent?.Invoke();
         }
