@@ -179,7 +179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4253297328530706518, guid: 386af45775f34f94ea083fad2d0054a6, type: 3}
       propertyPath: m_Name
-      value: Alive
+      value: AliveMC
       objectReference: {fileID: 0}
     - target: {fileID: 4253297328530706527, guid: 386af45775f34f94ea083fad2d0054a6, type: 3}
       propertyPath: m_Material

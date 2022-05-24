@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    void Awake()
-    {
-        gameObject.layer = 8;
-    }
-
     void OnTriggerEnter2D(Collider2D other) {
         AliveManager aliveManager = other.GetComponent<AliveManager>();
         if(aliveManager != null)
         {
-            aliveManager.IncrementHealth(-2);
+            aliveManager.Kill();
         }    
     }
 }

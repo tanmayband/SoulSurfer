@@ -54,19 +54,19 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: layers.Array.data[8]
-    value: Interactable
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: layers.Array.data[9]
     value: Character
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: layers.Array.data[9]
+    value: Interactable
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: layers.Array.data[10]
-    value: 
+    value: Bounds
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: layers.Array.data[11]
-    value: 
+    value: GhostBounds
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: layers.Array.data[12]

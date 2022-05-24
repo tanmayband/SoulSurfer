@@ -8,6 +8,7 @@ using UtilsClasses;
 
 public class GhostController : MonoBehaviour, IClassWithEvents
 {
+    
     [SerializeField] float moveSpeed = 6f;
     public bool isActive {get; private set;}
 
@@ -42,7 +43,7 @@ public class GhostController : MonoBehaviour, IClassWithEvents
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //Complete the level if the player has enough coins
+        Debug.Log("OnTriggerEnter2D");
         if (other.GetComponent<AliveManager>() != null)
         {
             overlappingCharacter = other.GetComponent<AliveManager>();

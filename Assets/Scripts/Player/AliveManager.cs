@@ -25,7 +25,7 @@ public class AliveManager : MonoBehaviour, IClassWithEvents
     {
         health = new RangedValue(0, 10, 10);
         health.ClearEventHandlers();
-        health.MinReachedEvent += DeathEvent;
+        health.MinReachedEvent += Death;
 
         SetHealth(health.current);
     }
@@ -40,6 +40,17 @@ public class AliveManager : MonoBehaviour, IClassWithEvents
     public void IncrementHealth(int incrementBy)
     {
         SetHealth(health.current + incrementBy);
+    }
+
+    public void Kill()
+    {
+        SetHealth(health.min);
+    }
+
+    private void Death()
+    {
+        aliveController.SetBodyColour(new Color(0.2f,0.2f,0.2f));
+        DeathEvent?.Invoke();
     }
 
     public void ClearEventHandlers()

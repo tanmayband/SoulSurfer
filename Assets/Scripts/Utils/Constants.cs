@@ -9,4 +9,12 @@ namespace Constants
         Ghost = 7,
         Character = 8
     }
+
+    public class ConstantsUtils
+    {
+        public static bool CheckLayer(int checkLayer, LAYER targetLayer)
+        {
+            return checkLayer == (int)targetLayer;
+        }
+    }
 }

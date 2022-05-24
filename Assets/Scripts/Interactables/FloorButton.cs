@@ -19,7 +19,7 @@ public class FloorButton : MonoBehaviour
 
     void OnTopEnter(Collider2D other)
     {
-        if (other.gameObject.layer != (int)LAYER.Ghost)
+        if (!ConstantsUtils.CheckLayer(other.gameObject.layer, LAYER.Ghost))
         {
             ToggleButton(true);
         }

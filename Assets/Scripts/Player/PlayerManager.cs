@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
 {
     public AliveManager aliveManager;
     public GhostManager ghostManager;
+    
     private bool isGhost;
 
     void Awake()
@@ -60,7 +61,7 @@ public class PlayerManager : MonoBehaviour
     {
         Debug.Log("TOGGLIN' SIT TIGHT");
         Death();
-        
+
         // isGhost = !isGhost;
         // if(isGhost) Death();
         // else Revive();

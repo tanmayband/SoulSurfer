@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class AliveController : MonoBehaviour
 {
+    public SpriteRenderer body;
     [SerializeField] float moveSpeed = 6f;
     [SerializeField] float jumpForce = 8f;
     [SerializeField] Collider2D feet;
@@ -24,8 +25,6 @@ public class AliveController : MonoBehaviour
 
 
     const string platformLayer = "Platform";
-
-    public event Action restartLevelEvent;
 
     void Awake()
     {
@@ -79,13 +78,13 @@ public class AliveController : MonoBehaviour
         rb.velocity = isActive ? rb.velocity : Vector2.zero;
     }
 
-    void OnRestart()
-    {
-        restartLevelEvent?.Invoke();
-    }
-
     public void ClearEventHandlers()
     {
-        restartLevelEvent = null;
+
+    }
+
+    public void SetBodyColour(Color newColour)
+    {
+        body.color = newColour;
     }
 }
