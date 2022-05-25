@@ -17,7 +17,7 @@ TagManager:
   - Interactable
   - Bounds
   - GhostBounds
-  - 
+  - GhostBlock
   - 
   - 
   - 
