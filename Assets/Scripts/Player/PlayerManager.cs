@@ -41,7 +41,9 @@ public class PlayerManager : MonoBehaviour
     {
         if(newBodyManager.IsAlive())
         {
+            aliveManager.ClearEventHandlers();
             aliveManager = newBodyManager;
+            aliveManager.DeathEvent += Death;
             Revive();
         }
         else

@@ -1229,6 +1229,41 @@ PrefabInstance:
       objectReference: {fileID: 102900000, guid: 98b9bd60f7aec435288155dd920603c9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9189751bb5263c4ea9cb00fcb0af362, type: 3}
+--- !u!1 &699900630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4930295507155751656, guid: a9189751bb5263c4ea9cb00fcb0af362, type: 3}
+  m_PrefabInstance: {fileID: 699900629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &699900631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699900630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5456590092cac38439fafa11fb1cace0, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1441362064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6515,6 +6550,63 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1001 &1834944809
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4165005894016012404, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_Name
+      value: LevelBounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8216904
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.9421983
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -97.7769
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165005894016012405, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 254c4c76aaf5b4569b4adf44742434ca, type: 3}
 --- !u!1 &2048710391
 GameObject:
   m_ObjectHideFlags: 0

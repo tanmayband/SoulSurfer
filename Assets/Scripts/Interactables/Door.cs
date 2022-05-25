@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Door : Operable
 {
+    public Transform door;
     protected override void Operation()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y + 2);
+        door.transform.localPosition = new Vector2(door.transform.localPosition.x, door.transform.localPosition.y + 2);
     }
 
     protected override void Stoppage()

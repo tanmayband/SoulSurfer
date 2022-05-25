@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOperating: 0
+  door: {fileID: 2088665116903883120}
 --- !u!1 &4295121527806352740
 GameObject:
   m_ObjectHideFlags: 0

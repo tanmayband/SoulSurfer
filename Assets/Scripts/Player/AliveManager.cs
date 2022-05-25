@@ -32,7 +32,6 @@ public class AliveManager : MonoBehaviour, IClassWithEvents
 
     public void SetHealth(float newHealth)
     {
-        Debug.Log(newHealth);
         health.SetValue(newHealth);
         healthValueText.text = health.current.ToString();
     }

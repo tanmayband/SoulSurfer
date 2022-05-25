@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &746410608928246599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -297,7 +297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3458da0d7f0e5407d9f4a00351b6dbcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 0}
   healthValueText: {fileID: 5487443412770533381}
   health:
     max: 10
@@ -315,6 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b638a67eafc447a968078a78021284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 4253297329431871019}
   moveSpeed: 6
   jumpForce: 8
   feet: {fileID: 4253297329264242477}

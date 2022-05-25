@@ -61,4 +61,49 @@ namespace UtilsClasses
             return current;
         }
     }
+
+    [Serializable]
+    public class SteppedRange
+    {
+        [SerializeField]
+        public List<float> stepRangeValues { get; private set; }
+
+        public SteppedRange(List<float> values)
+        {
+            stepRangeValues = values;
+        }
+
+        public bool WithinRange(float checkValue)
+        {
+            return (checkValue >= stepRangeValues[0]) && (checkValue <= stepRangeValues[stepRangeValues.Count - 1]);
+        }
+
+        public bool WithinRange(double checkValue)
+        {
+            return WithinRange((float)checkValue);
+        }
+
+        public float GetSteppedValue(float convertValue)
+        {
+            float steppedValue;
+            int stepIndex = 0;
+            while(
+                stepRangeValues[stepIndex] < convertValue && 
+                stepIndex < stepRangeValues.Count
+            )
+            {
+                stepIndex++;
+            }
+
+            stepIndex = Mathf.Clamp(stepIndex - 1, 0, stepRangeValues.Count - 1);
+            steppedValue = stepRangeValues[stepIndex];
+
+            return steppedValue;
+        }
+
+        public float GetSteppedValue(double convertValue)
+        {
+            return GetSteppedValue((float)convertValue);
+        }
+    }
 }
