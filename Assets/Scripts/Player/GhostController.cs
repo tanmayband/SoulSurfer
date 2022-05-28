@@ -16,6 +16,7 @@ public class GhostController : MonoBehaviour, IClassWithEvents
     public Rigidbody2D rb;
     public BoxCollider2D collision;
     public event Action<AliveManager> PossessingEvent;
+    public AudioSource overlapSound;
 
     private AliveManager overlappingCharacter;
     private Shaker shaker;
@@ -68,6 +69,7 @@ public class GhostController : MonoBehaviour, IClassWithEvents
             overlappingCharacter.aliveController.TogglePossessVFX(false);
             overlappingCharacter = null;
             shaker.StopShake();
+            overlapSound.Stop();
         }
     } 
 
@@ -94,6 +96,10 @@ public class GhostController : MonoBehaviour, IClassWithEvents
                     List<int> vibrations = new List<int>{20, 20, 20, 5, 5};
                     shaker.ShakeThatThing(vibrations[distanceRange.stepRangeValues.IndexOf(overlappingCharacterDistance)]);
                     overlappingCharacter.aliveController.TogglePossessVFX(true);
+                    if(!overlapSound.isPlaying)
+                    {
+                        overlapSound.Play();
+                    }
                 }
 
             }

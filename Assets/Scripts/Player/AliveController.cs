@@ -24,6 +24,10 @@ public class AliveController : MonoBehaviour
     public Rigidbody2D rb;
     public BoxCollider2D collision;
 
+    public AudioSource jumpSound;
+    public AudioSource deathSound;
+    public AudioSource possessSound;
+
 
     const string platformLayer = "Platform";
 
@@ -46,6 +50,7 @@ public class AliveController : MonoBehaviour
             {
                 rb.velocity += Vector2.up * jumpForce;
                 isJumping = false;
+                jumpSound.Play();
             }
 
             // make the jump better

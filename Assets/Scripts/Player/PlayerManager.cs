@@ -45,6 +45,7 @@ public class PlayerManager : MonoBehaviour
             aliveManager = newBodyManager;
             aliveManager.DeathEvent += Death;
             Revive();
+            aliveManager.aliveController.possessSound.Play();
         }
         else
         {

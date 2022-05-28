@@ -50,6 +50,7 @@ public class AliveManager : MonoBehaviour, IClassWithEvents
     {
         aliveController.SetBodyColour(new Color(0.2f,0.2f,0.2f));
         DeathEvent?.Invoke();
+        aliveController.deathSound.Play();
     }
 
     public void ClearEventHandlers()
