@@ -15,6 +15,7 @@ public class AliveController : MonoBehaviour
     public bool isActive {get; private set;}
     public float fallMultiplier = 3f;
     public float lowJumpMultiplier = 2f;
+    public ParticleSystem possessRings;
 
     Vector2 moveDirection;
     Vector2 rawInput;
@@ -30,6 +31,7 @@ public class AliveController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         collision = GetComponent<BoxCollider2D>();
+        TogglePossessVFX(false);
     }
 
     void FixedUpdate()
@@ -86,5 +88,10 @@ public class AliveController : MonoBehaviour
     public void SetBodyColour(Color newColour)
     {
         body.color = newColour;
+    }
+
+    public void TogglePossessVFX(bool active)
+    {
+        possessRings.gameObject.SetActive(active);
     }
 }

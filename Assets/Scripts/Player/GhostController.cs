@@ -65,6 +65,7 @@ public class GhostController : MonoBehaviour, IClassWithEvents
     {
         if (other.GetComponent<AliveManager>() != null)
         {
+            overlappingCharacter.aliveController.TogglePossessVFX(false);
             overlappingCharacter = null;
             shaker.StopShake();
         }
@@ -92,6 +93,7 @@ public class GhostController : MonoBehaviour, IClassWithEvents
                 {
                     List<int> vibrations = new List<int>{20, 20, 20, 5, 5};
                     shaker.ShakeThatThing(vibrations[distanceRange.stepRangeValues.IndexOf(overlappingCharacterDistance)]);
+                    overlappingCharacter.aliveController.TogglePossessVFX(true);
                 }
 
             }
