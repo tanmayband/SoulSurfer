@@ -18,6 +18,8 @@ public class LevelManager : MonoBehaviour
 
     public void GoToNextLevel()
     {
+        AudioPlayerManager.instance.successSound.Play();
+
         if(!string.IsNullOrEmpty(nextLevel.ScenePath))
             SceneManager.LoadScene(nextLevel);
         else

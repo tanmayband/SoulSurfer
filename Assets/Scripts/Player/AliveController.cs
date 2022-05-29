@@ -28,7 +28,6 @@ public class AliveController : MonoBehaviour
     public AudioSource deathSound;
     public AudioSource possessSound;
 
-
     const string platformLayer = "Platform";
 
     void Awake()

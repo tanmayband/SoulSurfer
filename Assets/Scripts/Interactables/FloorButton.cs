@@ -10,6 +10,7 @@ public class FloorButton : MonoBehaviour
     public BetterBoxCollider2D topTrigger;
     public Operable operable;
     private bool isButtonActive;
+    public AudioSource pressSound;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class FloorButton : MonoBehaviour
         if (!ConstantsUtils.CheckLayer(other.gameObject.layer, LAYER.Ghost))
         {
             ToggleButton(true);
+            pressSound.Play();
         }
     }
 
