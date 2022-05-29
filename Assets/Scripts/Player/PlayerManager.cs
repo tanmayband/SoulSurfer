@@ -32,7 +32,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Death()
     {
-        Debug.Log("Become ghost BOOO");
         ghostManager.SpawnGhost(aliveManager.transform.position);
         aliveManager.ToggleAliveMode(false);
     }
@@ -47,17 +46,17 @@ public class PlayerManager : MonoBehaviour
             Revive();
             aliveManager.aliveController.possessSound.Play();
         }
-        else
-        {
-            Debug.Log("He ded bro");
-        }
     }
 
     private void Revive()
     {
-        Debug.Log("Become ALIVE");
         ghostManager.UnspawnGhost();
         aliveManager.ToggleAliveMode(true);
+    }
+
+    public void OnPause()
+    {
+        PauseMenu.instance.TogglePauseMenu();
     }
 
     public void OnCHEATToggle(InputValue value)

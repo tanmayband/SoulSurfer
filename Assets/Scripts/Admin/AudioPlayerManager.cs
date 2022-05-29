@@ -20,8 +20,13 @@ public class AudioPlayerManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Start()
+    public void StartMusic()
     {
         bgMusic.Play();
+    }
+
+    public void StopMusic()
+    {
+        bgMusic.Stop();
     }
 }

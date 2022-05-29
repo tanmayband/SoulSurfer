@@ -12,23 +12,30 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        goal.ClearEventHandlers();
-        goal.goalCompleteEvent += GoToNextLevel;
+        if(goal)
+        {
+            goal.ClearEventHandlers();
+            goal.goalCompleteEvent += GoToNextLevel;
+        }
     }
 
     public void GoToNextLevel()
     {
         AudioPlayerManager.instance.successSound.Play();
-
-        if(!string.IsNullOrEmpty(nextLevel.ScenePath))
-            SceneManager.LoadScene(nextLevel);
-        else
-            Debug.Log("End of game!");
+        LoadLevel(nextLevel);
     }
 
     public void OnRestart()
     {
         playerManager.aliveManager.aliveController.ToggleActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadLevel(SceneReference level)
+    {
+        if(!string.IsNullOrEmpty(level.ScenePath))
+            SceneManager.LoadScene(level);
+        else
+            Debug.Log("End of game!");
     }
 }
